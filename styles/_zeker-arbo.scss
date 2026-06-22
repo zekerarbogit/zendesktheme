@@ -144,7 +144,7 @@ h6 {
   display: grid;
   flex: 0 0 auto;
   gap: 0;
-  grid-template-rows: 210px 206px;
+  grid-template-rows: 210px 146px;
   justify-content: stretch;
   padding: 0;
 }
@@ -153,10 +153,10 @@ h6 {
   box-sizing: border-box;
   display: grid;
   gap: 8px;
-  grid-template-rows: 58px 96px;
-  height: 206px;
+  grid-template-rows: 52px 50px;
+  height: 146px;
   min-height: 0;
-  padding: 22px 20px;
+  padding: 22px 20px 14px;
 }
 
 .gb-category-card .blocks-item-title {
@@ -175,7 +175,7 @@ h6 {
   min-height: 0;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
 }
 
 .gb-category-card .blocks-item-description:not(:empty) {
@@ -183,7 +183,7 @@ h6 {
 }
 
 .gb-card-section-list {
-  margin-top: auto;
+  margin-top: 0;
   padding: 10px;
 }
 
