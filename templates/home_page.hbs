@@ -60,6 +60,22 @@
       {{pagination}}
     </section>
 
+    {{#if settings.home_content_title}}
+      <section class="gb-home-extra">
+        <div class="gb-home-extra-copy">
+          <h2>{{settings.home_content_title}}</h2>
+          {{#if settings.home_content_body}}
+            <p>{{settings.home_content_body}}</p>
+          {{/if}}
+        </div>
+        {{#if settings.home_content_link_label}}
+          <a class="gb-home-extra-link" href="{{settings.home_content_link_url}}">
+            {{settings.home_content_link_label}}
+          </a>
+        {{/if}}
+      </section>
+    {{/if}}
+
     {{#if promoted_articles}}
       <section class="articles">
         <h2>{{t 'promoted_articles'}}</h2>

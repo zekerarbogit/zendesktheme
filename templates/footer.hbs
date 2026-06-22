@@ -1,6 +1,26 @@
 <footer class="footer">
-  <div class="footer-inner">
-    {{#link 'help_center'}}{{help_center.name}}{{/link}}
+  <div class="footer-inner gb-footer-inner">
+    <div class="gb-footer-brand">
+      {{#link 'help_center' class='gb-footer-title'}}
+        {{#if settings.footer_title}}
+          {{settings.footer_title}}
+        {{else}}
+          {{help_center.name}}
+        {{/if}}
+      {{/link}}
+      {{#if settings.footer_text}}
+        <p>{{settings.footer_text}}</p>
+      {{/if}}
+    </div>
+
+    <nav class="gb-footer-links" aria-label="Footer">
+      {{#if settings.footer_link_1_label}}
+        <a href="{{settings.footer_link_1_url}}">{{settings.footer_link_1_label}}</a>
+      {{/if}}
+      {{#if settings.footer_link_2_label}}
+        <a href="{{settings.footer_link_2_url}}">{{settings.footer_link_2_label}}</a>
+      {{/if}}
+    </nav>
 
     <div class="footer-language-selector">
       {{#if alternative_locales}}

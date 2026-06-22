@@ -191,6 +191,108 @@ h6 {
   margin: 0;
 }
 
+.gb-home-extra {
+  align-items: center;
+  border-top: 1px solid var(--gb-border);
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  margin-top: 28px;
+  padding: 32px 0 0;
+}
+
+.gb-home-extra-copy {
+  max-width: 760px;
+}
+
+.gb-home-extra h2 {
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.gb-home-extra p {
+  color: var(--gb-text-muted);
+  line-height: 1.65;
+  margin: 10px 0 0;
+}
+
+.gb-home-extra-link {
+  border: 1px solid var(--gb-border-strong);
+  border-radius: 6px;
+  color: $text_color;
+  flex: 0 0 auto;
+  font-size: 15px;
+  font-weight: 650;
+  padding: 11px 14px;
+  text-decoration: none;
+}
+
+.gb-home-extra-link:hover,
+.gb-home-extra-link:focus {
+  background: var(--gb-surface-muted);
+  color: $text_color;
+  text-decoration: none;
+}
+
+.footer {
+  border-top-color: var(--gb-border);
+  margin-top: 64px;
+}
+
+.gb-footer-inner {
+  align-items: flex-start;
+  gap: 28px;
+  max-width: var(--gb-page-width);
+  width: min(94%, var(--gb-page-width));
+}
+
+.gb-footer-brand {
+  max-width: 560px;
+}
+
+.gb-footer-title {
+  color: $text_color;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.gb-footer-title:hover,
+.gb-footer-title:focus {
+  color: $text_color;
+}
+
+.gb-footer-brand p {
+  color: var(--gb-text-muted);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 8px 0 0;
+}
+
+.gb-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-left: auto;
+}
+
+.gb-footer-links a {
+  color: $text_color;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.gb-footer-links a:hover,
+.gb-footer-links a:focus {
+  color: $link_color;
+  text-decoration: none;
+}
+
+.footer-language-selector {
+  flex: 0 0 auto;
+}
+
 .gb-doc-layout {
   gap: 48px;
 }
@@ -298,6 +400,31 @@ h6 {
     height: auto;
     grid-template-rows: none;
     min-height: 0;
+  }
+
+  .gb-home-extra {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+
+  .gb-home-extra h2 {
+    font-size: 21px;
+  }
+
+  .gb-home-extra-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .gb-footer-inner {
+    flex-direction: column;
+  }
+
+  .gb-footer-links {
+    margin-left: 0;
   }
 
   .article-content {

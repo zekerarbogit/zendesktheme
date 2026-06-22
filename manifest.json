@@ -1,7 +1,7 @@
 {
   "name": "ZekerArbo",
   "author": "Zendesk",
-  "version": "4.42.4",
+  "version": "4.42.5",
   "api_version": 4,
   "default_locale": "en-us",
   "settings": [
@@ -315,11 +315,86 @@
           "value": "Waar kunnen we je mee helpen?"
         },
         {
+          "identifier": "home_content_title",
+          "type": "text",
+          "description": "Title shown below the category tiles on the home page",
+          "label": "Home content title",
+          "value": "Niet gevonden wat je zoekt?"
+        },
+        {
+          "identifier": "home_content_body",
+          "type": "text",
+          "description": "Text shown below the category tiles on the home page",
+          "label": "Home content text",
+          "value": "Onze kennisbank helpt je stap voor stap verder. Kom je er niet uit, dan kun je een aanvraag indienen bij onze klantenservice."
+        },
+        {
+          "identifier": "home_content_link_label",
+          "type": "text",
+          "description": "Optional link label for the home page content block",
+          "label": "Home content link label",
+          "value": "Een aanvraag indienen"
+        },
+        {
+          "identifier": "home_content_link_url",
+          "type": "text",
+          "description": "Optional link URL for the home page content block",
+          "label": "Home content link URL",
+          "value": "/hc/nl/requests/new"
+        },
+        {
           "identifier": "show_recent_activity",
           "type": "checkbox",
           "description": "recent_activity_description",
           "label": "recent_activity_label",
           "value": false
+        }
+      ]
+    },
+    {
+      "label": "Footer",
+      "variables": [
+        {
+          "identifier": "footer_title",
+          "type": "text",
+          "description": "Title shown in the footer",
+          "label": "Footer title",
+          "value": "ZekerArbo"
+        },
+        {
+          "identifier": "footer_text",
+          "type": "text",
+          "description": "Short text shown in the footer",
+          "label": "Footer text",
+          "value": "Praktische hulp voor medewerkers, werkgevers, verzekeraars en volmachten."
+        },
+        {
+          "identifier": "footer_link_1_label",
+          "type": "text",
+          "description": "Label for the first footer link",
+          "label": "Footer link 1 label",
+          "value": "Contact"
+        },
+        {
+          "identifier": "footer_link_1_url",
+          "type": "text",
+          "description": "URL for the first footer link",
+          "label": "Footer link 1 URL",
+          "value": "/hc/nl/requests/new"
+        },
+        {
+          "identifier": "footer_link_2_label",
+          "type": "text",
+          "description": "Label for the second footer link",
+          "label": "Footer link 2 label",
+          "value": "ZekerArbo.nl"
+        },
+        {
+          "identifier": "footer_link_2_url",
+          "type": "text",
+          "description": "URL for the second footer link",
+          "label": "Footer link 2 URL",
+          "value": "https://www.zekerarbo.nl"
         }
       ]
     },
