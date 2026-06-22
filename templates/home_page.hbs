@@ -2,7 +2,16 @@
 
 <section id="main-content" class="section hero gb-hero">
   <div class="hero-inner">
-    <h2 class="gb-hero-title">{{help_center.name}}</h2>
+    <h2 class="gb-hero-title">
+      {{#if settings.home_hero_title}}
+        {{settings.home_hero_title}}
+      {{else}}
+        {{help_center.name}}
+      {{/if}}
+    </h2>
+    {{#if settings.home_hero_subtitle}}
+      <p class="gb-hero-subtitle">{{settings.home_hero_subtitle}}</p>
+    {{/if}}
   </div>
 </section>
 

@@ -1,7 +1,7 @@
 {
   "name": "ZekerArbo",
   "author": "Zendesk",
-  "version": "4.42.1",
+  "version": "4.42.2",
   "api_version": 4,
   "default_locale": "en-us",
   "settings": [
@@ -300,6 +300,20 @@
     {
       "label": "home_page_group_label",
       "variables": [
+        {
+          "identifier": "home_hero_title",
+          "type": "text",
+          "description": "Title shown at the top of the home page",
+          "label": "Home page title",
+          "value": "ZekerArbo"
+        },
+        {
+          "identifier": "home_hero_subtitle",
+          "type": "text",
+          "description": "Short text shown below the home page title",
+          "label": "Home page subtitle",
+          "value": "Waar kunnen we je mee helpen?"
+        },
         {
           "identifier": "show_recent_activity",
           "type": "checkbox",
