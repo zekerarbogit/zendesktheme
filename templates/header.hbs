@@ -21,14 +21,16 @@
       <ul class="user-nav-list">
         <li>{{link 'community'}}</li>
         <li>{{link 'service_catalog'}}</li>
-        <li>{{link 'new_request' class='submit-a-request'}}</li>
-        {{#unless signed_in}}
-          <li>
-            {{#link "sign_in" class="sign-in" role="link"}}
-              {{t 'sign_in'}}
-            {{/link}}
-          </li>
-        {{/unless}}
+        {{#if settings.show_header_actions}}
+          <li>{{link 'new_request' class='submit-a-request'}}</li>
+          {{#unless signed_in}}
+            <li>
+              {{#link "sign_in" class="sign-in" role="link"}}
+                {{t 'sign_in'}}
+              {{/link}}
+            </li>
+          {{/unless}}
+        {{/if}}
       </ul>
     </nav>
           {{#link 'chat' class='ask-ai'}}
@@ -90,16 +92,22 @@
           <li class="item">{{change_password class='change-password'}}</li>
           <li class="nav-divider"></li>
         {{else}}
-          <li class="item">
-            {{#link "sign_in" role="link"}}
-              {{t 'sign_in'}}
-            {{/link}}
-          </li>
-          <li class="nav-divider"></li>
+          {{#if settings.show_header_actions}}
+            <li class="item">
+              {{#link "sign_in" role="link"}}
+                {{t 'sign_in'}}
+              {{/link}}
+            </li>
+            <li class="nav-divider"></li>
+          {{/if}}
         {{/if}}
        
         <li class="item">{{link 'community'}}</li>
-        <li class="item">{{link 'new_request' class='submit-a-request'}}</li>
+        {{#if settings.show_header_actions}}
+          <li class="item">
+            {{link 'new_request' class='submit-a-request'}}
+          </li>
+        {{/if}}
         <li class="item">{{link 'service_catalog'}}</li>
         <li class="nav-divider"></li>
         {{#if signed_in}}
