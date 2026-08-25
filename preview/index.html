@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZekerArbo theme preview</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./preview.css" />
+  </head>
+  <body class="preview-page">
+    <a class="skip-navigation" href="#main-content" data-i18n="skipNavigation">Ga naar hoofdcontent</a>
+
+    <header class="header">
+      <div class="logo">
+        <a href="#top">
+          <img src="./assets/zeker-arbo-logo.png" alt="ZekerArbo" class="preview-site-logo" />
+        </a>
+      </div>
+
+      <div class="gb-header-search">
+        <h2 class="visibility-hidden" data-i18n="search">Zoeken</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
+          <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
+          <path stroke="currentColor" stroke-linecap="round" d="M11 11 7.5 7.5" />
+        </svg>
+        <form class="search gb-header-search-form" role="search">
+          <input type="search" aria-label="Zoeken" placeholder="Zoeken" data-i18n-aria-label="search" data-i18n-placeholder="search" />
+        </form>
+      </div>
+
+      <div class="nav-wrapper-desktop preview-header-actions" hidden>
+        <nav class="user-nav" id="user-nav" aria-label="Gebruikersnavigatie" data-i18n-aria-label="userNavigation">
+          <ul class="user-nav-list">
+            <li><a class="submit-a-request" href="/hc/nl/requests/new" data-i18n="submitRequest" data-i18n-href="requestPath">Een aanvraag indienen</a></li>
+            <li><a class="sign-in" href="#aanmelden" data-i18n="signIn">Aanmelden</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="dropdown language-selector gb-header-language">
+        <button class="dropdown-toggle gb-language-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+          <span class="gb-language-flag gb-language-flag--nl" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12" focusable="false">
+              <path fill="#AE1C28" d="M0 0h18v4H0z" />
+              <path fill="#FFF" d="M0 4h18v4H0z" />
+              <path fill="#21468B" d="M0 8h18v4H0z" />
+            </svg>
+          </span>
+          <span class="gb-language-flag gb-language-flag--en" aria-hidden="true" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12" focusable="false">
+              <path fill="#1F3C88" d="M0 0h18v12H0z" />
+              <path fill="#FFF" d="m0 1.2 1.8-1.2L18 10.8V12h-1.8L0 1.2ZM18 1.2 16.2 0 0 10.8V12h1.8L18 1.2Z" />
+              <path fill="#C8102E" d="M0 2.2 13.2 12H10L0 4.5V2.2ZM18 2.2v2.3L8 12H4.8L18 2.2ZM7.2 0h3.6v12H7.2zM0 4.2h18v3.6H0z" />
+            </svg>
+          </span>
+          <span class="gb-language-name">Nederlands</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5 5.6 7.1c.2.2.5.2.7 0L9 4.5" />
+          </svg>
+        </button>
+        <span class="dropdown-menu dropdown-menu-end" role="menu">
+          <a href="?locale=en-nl#top" role="menuitem" class="preview-language-option">
+            <span class="gb-language-flag gb-language-flag--nl" aria-hidden="true" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12" focusable="false">
+                <path fill="#AE1C28" d="M0 0h18v4H0z" />
+                <path fill="#FFF" d="M0 4h18v4H0z" />
+                <path fill="#21468B" d="M0 8h18v4H0z" />
+              </svg>
+            </span>
+            <span class="gb-language-flag gb-language-flag--en" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12" focusable="false">
+                <path fill="#1F3C88" d="M0 0h18v12H0z" />
+                <path fill="#FFF" d="m0 1.2 1.8-1.2L18 10.8V12h-1.8L0 1.2ZM18 1.2 16.2 0 0 10.8V12h1.8L18 1.2Z" />
+                <path fill="#C8102E" d="M0 2.2 13.2 12H10L0 4.5V2.2ZM18 2.2v2.3L8 12H4.8L18 2.2ZM7.2 0h3.6v12H7.2zM0 4.2h18v3.6H0z" />
+              </svg>
+            </span>
+            <span class="preview-language-option-name">English (Netherlands)</span>
+          </a>
+        </span>
+      </div>
+
+      <div class="nav-wrapper-mobile">
+        <button class="menu-button-mobile" type="button" aria-label="Navigatiemenu" aria-expanded="false" data-i18n-aria-label="navigationMenu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section id="main-content" class="section hero gb-hero">
+      <div class="hero-inner">
+        <h1 class="gb-hero-title" data-i18n="heroTitle">Welkom bij ZekerArbo Service</h1>
+        <p class="gb-hero-subtitle" data-i18n="heroSubtitle">Hier vind je uitleg over het gebruik van het ZekerArbo portaal. Of je nu werkgever bent en verzuim begeleidt, of werknemer bent en werkt aan je herstel. We leggen je stap voor stap uit hoe het werkt.</p>
+      </div>
+    </section>
+
+    <main class="container">
+      <section class="section knowledge-base gb-home">
+        <header class="gb-section-header">
+          <h2 data-i18n="categories">Categorieën</h2>
+        </header>
+
+        <section class="categories blocks">
+          <ul class="blocks-list gb-category-grid">
+            <li class="blocks-item gb-category-card">
+              <a href="#medewerkers" class="blocks-item-link gb-category-card-link">
+                <span class="gb-category-copy">
+                  <span class="blocks-item-title" data-i18n="employeeTitle">Hulp voor medewerkers</span>
+                  <span class="blocks-item-description" data-i18n="employeeDescription">Ben je ziekgemeld en heb je toegang gekregen tot het portaal? Hier leggen we uit wat je kunt verwachten.</span>
+                </span>
+                <span class="gb-category-card-arrow" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" focusable="false" viewBox="0 0 18 18">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.5 9h10m-4-4 4 4-4 4" />
+                  </svg>
+                </span>
+              </a>
+              <ul class="gb-card-section-list">
+                <li><a href="#inloggen" data-i18n="employeeLogin">Inloggen</a></li>
+                <li><a href="?article=appointments&locale=nl#main-content" data-article-link="appointments" data-i18n="employeePortal">Gebruik portaal</a></li>
+                <li><a href="#verzuim" data-i18n="absence">Verzuim</a></li>
+                <li><a href="#videobellen" data-i18n="videoCalls">Videobellen</a></li>
+                <li><a href="#zekerarbo" data-i18n="aboutZekerArbo">Over ZekerArbo</a></li>
+              </ul>
+            </li>
+
+            <li class="blocks-item gb-category-card">
+              <a href="#werkgevers" class="blocks-item-link gb-category-card-link">
+                <span class="gb-category-copy">
+                  <span class="blocks-item-title" data-i18n="employerTitle">Hulp voor werkgevers</span>
+                  <span class="blocks-item-description" data-i18n="employerDescription">Neem je arbodienst bij ons af? Lees hier hoe je het portaal optimaal gebruikt.</span>
+                </span>
+                <span class="gb-category-card-arrow" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" focusable="false" viewBox="0 0 18 18">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.5 9h10m-4-4 4 4-4 4" />
+                  </svg>
+                </span>
+              </a>
+              <ul class="gb-card-section-list">
+                <li><a href="#inloggen-werkgever" data-i18n="employerLogin">Inloggen</a></li>
+                <li><a href="?article=prognosis&locale=nl#main-content" data-article-link="prognosis" data-i18n="employerPortal">Gebruik portaal</a></li>
+                <li><a href="#algemeen" data-i18n="general">Algemeen</a></li>
+              </ul>
+            </li>
+
+            <li class="blocks-item gb-category-card">
+              <a href="#verzekeraars" class="blocks-item-link gb-category-card-link">
+                <span class="gb-category-copy">
+                  <span class="blocks-item-title" data-i18n="insurerTitle">Hulp voor verzekeraars en volmachten</span>
+                  <span class="blocks-item-description" data-i18n="insurerDescription">Heb je als adviseur klanten die je ondersteunt in het verzuim? Lees hier hoe het portaal werkt.</span>
+                </span>
+                <span class="gb-category-card-arrow" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" focusable="false" viewBox="0 0 18 18">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.5 9h10m-4-4 4 4-4 4" />
+                  </svg>
+                </span>
+              </a>
+              <ul class="gb-card-section-list">
+                <li><a href="?article=communication&locale=nl#main-content" data-article-link="communication" data-i18n="insurerPortal">Gebruik portaal</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section class="gb-home-story" aria-labelledby="preview-story-title">
+          <div class="gb-home-story-media">
+            <img src="./assets/zeker-arbo-diensten.jpg" alt="" loading="lazy" />
+            <img src="./assets/zeker-arbo-arbobas.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="gb-home-story-copy">
+            <p class="gb-home-story-kicker" data-i18n="storyKicker">Gezond en inzetbaar aan het werk</p>
+            <h2 id="preview-story-title" data-i18n="storyTitle">Samen maken we werk sterker</h2>
+            <p data-i18n="storyBody">Van preventie tot verzuimbegeleiding: ZekerArbo helpt mensen en organisaties vooruit met praktische expertise en persoonlijke aandacht.</p>
+            <a href="https://www.zekerarbo.nl/over-ons/" class="gb-home-story-link" data-i18n="storyLink">Ontdek ZekerArbo</a>
+          </div>
+        </section>
+
+        <section class="gb-home-extra">
+          <div class="gb-home-extra-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" focusable="false" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 5.75A2.75 2.75 0 0 1 7.75 3h8.5A2.75 2.75 0 0 1 19 5.75v6.5A2.75 2.75 0 0 1 16.25 15H12l-4.5 4v-4.19A2.75 2.75 0 0 1 5 12.25v-6.5Z" />
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M9 9h6m-6 3h3" />
+            </svg>
+          </div>
+          <div class="gb-home-extra-copy">
+            <h2 data-i18n="contentTitle">Niet gevonden wat je zoekt?</h2>
+            <p data-i18n="contentBody">Onze kennisbank helpt je stap voor stap verder. Kom je er niet uit, dan kun je een aanvraag indienen bij onze klantenservice.</p>
+          </div>
+          <a class="gb-home-extra-link" href="/hc/nl/requests/new" data-i18n-href="requestPath">
+            <span data-i18n="contentLink">Een aanvraag indienen</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M3 8h9m-4-4 4 4-4 4" />
+            </svg>
+          </a>
+        </section>
+
+        <section class="gb-home-content-section gb-home-promoted">
+          <h2 data-i18n="popularArticles">Veel gezocht</h2>
+          <ul class="article-list promoted-articles gb-home-article-grid">
+            <li class="promoted-articles-item">
+              <a href="?article=appointments&locale=nl#main-content" data-article-link="appointments" data-i18n="popularAppointments">Afspraken inzien</a>
+            </li>
+            <li class="promoted-articles-item">
+              <a href="?article=prognosis&locale=nl#main-content" data-article-link="prognosis" data-i18n="popularPrognosis">26-wekenprognose</a>
+            </li>
+            <li class="promoted-articles-item">
+              <a href="?article=communication&locale=nl#main-content" data-article-link="communication" data-i18n="popularCommunication">Communicatie met zorgprofessional</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="gb-home-updates">
+          <header class="gb-home-section-header">
+            <h2 data-i18n="recentUpdates">Nieuw en gewijzigd</h2>
+          </header>
+          <ul class="recent-activity-list">
+            <li class="recent-activity-item">
+              <a href="?article=communication&locale=nl#main-content" data-article-link="communication" data-i18n="recentCommunication">Communicatie met zorgprofessional</a>
+            </li>
+            <li class="recent-activity-item">
+              <a href="?article=prognosis&locale=nl#main-content" data-article-link="prognosis" data-i18n="recentPrognosis">26-wekenprognose</a>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner gb-footer-inner">
+        <div class="gb-footer-brand">
+          <a href="#top" class="gb-footer-title">ZekerArbo</a>
+          <p data-i18n="footerText">Praktische hulp voor medewerkers, werkgevers, verzekeraars en volmachten.</p>
+        </div>
+
+        <div class="gb-footer-actions">
+          <nav class="gb-footer-links" aria-label="Voettekst" data-i18n-aria-label="footerNavigation">
+            <a href="/hc/nl/requests/new" data-i18n="footerContact" data-i18n-href="requestPath">Contact</a>
+            <a href="https://www.zekerarbo.nl">ZekerArbo.nl</a>
+          </nav>
+          <div class="gb-footer-column gb-footer-legal">
+            <h2 class="gb-footer-heading">Legal</h2>
+            <nav class="gb-footer-links" aria-label="Legal">
+              <a href="https://www.zekerarbo.nl/disclaimer/" data-i18n="legalDisclaimer">Disclaimer</a>
+              <a href="https://www.zekerarbo.nl/privacystatement/" data-i18n="legalPrivacy">Privacystatement</a>
+              <a href="https://www.zekerarbo.nl/certificaten/" data-i18n="legalCertificates">Certificaten</a>
+              <a href="https://www.zekerarbo.nl/cookiestatement/" data-i18n="legalCookies">Cookiestatement</a>
+              <a href="https://www.zekerarbo.nl/#" data-i18n="legalCookieSettings">Cookie instellingen</a>
+              <a href="https://www.zekerarbo.nl/algemene_voorwaarden/" data-i18n="legalTerms">Algemene voorwaarden</a>
+              <a href="https://www.zekerarbo.nl/klachtenregeling/" data-i18n="legalComplaints">Klachtenregeling</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./articles.js"></script>
+    <script src="./preview.js"></script>
+  </body>
+</html>

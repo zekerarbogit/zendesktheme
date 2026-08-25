@@ -2,44 +2,76 @@
   <div class="footer-inner gb-footer-inner">
     <div class="gb-footer-brand">
       {{#link 'help_center' class='gb-footer-title'}}
-        {{#if settings.footer_title}}
-          {{settings.footer_title}}
+        {{#is help_center.locale 'en-nl'}}
+          {{#if settings.footer_title_en}}
+            {{settings.footer_title_en}}
+          {{else}}
+            {{help_center.name}}
+          {{/if}}
         {{else}}
-          {{help_center.name}}
-        {{/if}}
+          {{#if settings.footer_title}}
+            {{settings.footer_title}}
+          {{else}}
+            {{help_center.name}}
+          {{/if}}
+        {{/is}}
       {{/link}}
-      {{#if settings.footer_text}}
-        <p>{{settings.footer_text}}</p>
-      {{/if}}
+      {{#is help_center.locale 'en-nl'}}
+        {{#if settings.footer_text_en}}
+          <p>{{settings.footer_text_en}}</p>
+        {{/if}}
+      {{else}}
+        {{#if settings.footer_text}}
+          <p>{{settings.footer_text}}</p>
+        {{/if}}
+      {{/is}}
     </div>
 
-    <nav class="gb-footer-links" aria-label="Footer">
-      {{#if settings.footer_link_1_label}}
-        <a href="{{settings.footer_link_1_url}}">{{settings.footer_link_1_label}}</a>
-      {{/if}}
-      {{#if settings.footer_link_2_label}}
-        <a href="{{settings.footer_link_2_url}}">{{settings.footer_link_2_label}}</a>
-      {{/if}}
-    </nav>
+    <div class="gb-footer-actions">
+      {{#is help_center.locale 'en-nl'}}
+        <nav class="gb-footer-links" aria-label="Footer">
+          {{#if settings.footer_link_1_label_en}}
+            <a href="{{settings.footer_link_1_url_en}}">{{settings.footer_link_1_label_en}}</a>
+          {{/if}}
+          {{#if settings.footer_link_2_label_en}}
+            <a href="{{settings.footer_link_2_url_en}}">{{settings.footer_link_2_label_en}}</a>
+          {{/if}}
+        </nav>
+      {{else}}
+        <nav class="gb-footer-links" aria-label="Voettekst">
+          {{#if settings.footer_link_1_label}}
+            <a href="{{settings.footer_link_1_url}}">{{settings.footer_link_1_label}}</a>
+          {{/if}}
+          {{#if settings.footer_link_2_label}}
+            <a href="{{settings.footer_link_2_url}}">{{settings.footer_link_2_label}}</a>
+          {{/if}}
+        </nav>
+      {{/is}}
 
-    <div class="footer-language-selector">
-      {{#if alternative_locales}}
-        <div class="dropdown language-selector">
-          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-            {{current_locale.name}}
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon" aria-hidden="true">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
-            </svg>
-          </button>
-          <span class="dropdown-menu dropdown-menu-end" role="menu">
-            {{#each alternative_locales}}
-              <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
-                {{name}}
-              </a>
-            {{/each}}
-          </span>
-        </div>
-      {{/if}}
+      <div class="gb-footer-column gb-footer-legal">
+        <h2 class="gb-footer-heading">Legal</h2>
+        {{#is help_center.locale 'en-nl'}}
+          <nav class="gb-footer-links" aria-label="Legal">
+            <a href="https://www.zekerarbo.nl/disclaimer/">Disclaimer</a>
+            <a href="https://www.zekerarbo.nl/privacystatement/">Privacy statement</a>
+            <a href="https://www.zekerarbo.nl/certificaten/">Certificates</a>
+            <a href="https://www.zekerarbo.nl/cookiestatement/">Cookie statement</a>
+            <a href="https://www.zekerarbo.nl/#">Cookie settings</a>
+            <a href="https://www.zekerarbo.nl/algemene_voorwaarden/">Terms and conditions</a>
+            <a href="https://www.zekerarbo.nl/klachtenregeling/">Complaints procedure</a>
+          </nav>
+        {{else}}
+          <nav class="gb-footer-links" aria-label="Legal">
+            <a href="https://www.zekerarbo.nl/disclaimer/">Disclaimer</a>
+            <a href="https://www.zekerarbo.nl/privacystatement/">Privacystatement</a>
+            <a href="https://www.zekerarbo.nl/certificaten/">Certificaten</a>
+            <a href="https://www.zekerarbo.nl/cookiestatement/">Cookiestatement</a>
+            <a href="https://www.zekerarbo.nl/#">Cookie instellingen</a>
+            <a href="https://www.zekerarbo.nl/algemene_voorwaarden/">Algemene voorwaarden</a>
+            <a href="https://www.zekerarbo.nl/klachtenregeling/">Klachtenregeling</a>
+          </nav>
+        {{/is}}
+      </div>
     </div>
   </div>
 </footer>

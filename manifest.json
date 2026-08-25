@@ -268,6 +268,18 @@
           "type": "file",
           "description": "service_catalog_hero_image_description",
           "label": "service_catalog_hero_image_label"
+        },
+        {
+          "identifier": "home_story_image",
+          "type": "file",
+          "description": "Optional primary image for the visual story section on the home page",
+          "label": "Home story image"
+        },
+        {
+          "identifier": "home_story_image_secondary",
+          "type": "file",
+          "description": "Optional secondary image for the visual story section on the home page",
+          "label": "Home story secondary image"
         }
       ]
     },
@@ -331,14 +343,14 @@
           "type": "text",
           "description": "Title shown below the category tiles on the home page",
           "label": "Home content title",
-          "value": "Niet gevonden wat je zoekt?"
+          "value": "Hulp nodig?"
         },
         {
           "identifier": "home_content_body",
           "type": "text",
           "description": "Text shown below the category tiles on the home page",
           "label": "Home content text",
-          "value": "Onze kennisbank helpt je stap voor stap verder. Kom je er niet uit, dan kun je een aanvraag indienen bij onze klantenservice."
+          "value": "Kom je er niet uit? Onze kennisbank helpt je stap voor stap verder. Neem contact op met onze klantenservice als je meer hulp nodig hebt."
         },
         {
           "identifier": "home_content_link_label",
@@ -355,11 +367,109 @@
           "value": "/hc/nl/requests/new"
         },
         {
+          "identifier": "home_hero_title_en",
+          "type": "text",
+          "description": "English title shown at the top of the home page",
+          "label": "Home page title (English)",
+          "value": "Welcome to ZekerArbo Service"
+        },
+        {
+          "identifier": "home_hero_subtitle_en",
+          "type": "text",
+          "description": "English text shown below the home page title",
+          "label": "Home page subtitle (English)",
+          "value": "Here you can find guidance on using the ZekerArbo portal. Whether you are an employer managing absence or an employee working on recovery, we explain how it works step by step."
+        },
+        {
+          "identifier": "home_content_title_en",
+          "type": "text",
+          "description": "English title shown below the category tiles",
+          "label": "Home content title (English)",
+          "value": "Need help?"
+        },
+        {
+          "identifier": "home_content_body_en",
+          "type": "text",
+          "description": "English text shown below the category tiles",
+          "label": "Home content text (English)",
+          "value": "Still stuck? Our knowledge base guides you step by step. Contact our customer service team if you need more help."
+        },
+        {
+          "identifier": "home_content_link_label_en",
+          "type": "text",
+          "description": "English link label for the home page content block",
+          "label": "Home content link label (English)",
+          "value": "Submit a request"
+        },
+        {
+          "identifier": "home_content_link_url_en",
+          "type": "text",
+          "description": "English link URL for the home page content block",
+          "label": "Home content link URL (English)",
+          "value": "/hc/en-nl/requests/new"
+        },
+        {
+          "identifier": "home_quick_link_appointments_label",
+          "type": "text",
+          "description": "Label for the appointments quick link on the home page",
+          "label": "Appointments quick link label",
+          "value": "Afspraken"
+        },
+        {
+          "identifier": "home_quick_link_appointments_url",
+          "type": "text",
+          "description": "URL for the appointments quick link on the home page",
+          "label": "Appointments quick link URL",
+          "value": "/hc/nl/articles/36585590259986-Afspraken-inzien"
+        },
+        {
+          "identifier": "home_quick_link_video_label",
+          "type": "text",
+          "description": "Label for the video calls quick link on the home page",
+          "label": "Video calls quick link label",
+          "value": "Videobellen"
+        },
+        {
+          "identifier": "home_quick_link_video_url",
+          "type": "text",
+          "description": "URL for the video calls quick link on the home page",
+          "label": "Video calls quick link URL",
+          "value": "/hc/nl/sections/36585590343570-Videobellen"
+        },
+        {
+          "identifier": "home_quick_link_appointments_label_en",
+          "type": "text",
+          "description": "English label for the appointments quick link on the home page",
+          "label": "Appointments quick link label (English)",
+          "value": "Appointments"
+        },
+        {
+          "identifier": "home_quick_link_appointments_url_en",
+          "type": "text",
+          "description": "English URL for the appointments quick link on the home page",
+          "label": "Appointments quick link URL (English)",
+          "value": "/hc/en-nl/articles/36585590259986-View-appointments"
+        },
+        {
+          "identifier": "home_quick_link_video_label_en",
+          "type": "text",
+          "description": "English label for the video calls quick link on the home page",
+          "label": "Video calls quick link label (English)",
+          "value": "Video calls"
+        },
+        {
+          "identifier": "home_quick_link_video_url_en",
+          "type": "text",
+          "description": "English URL for the video calls quick link on the home page",
+          "label": "Video calls quick link URL (English)",
+          "value": "/hc/en-nl/sections/36585600503314-How-to-use-employee-portal"
+        },
+        {
           "identifier": "show_recent_activity",
           "type": "checkbox",
           "description": "recent_activity_description",
           "label": "recent_activity_label",
-          "value": false
+          "value": true
         }
       ]
     },
@@ -406,6 +516,48 @@
           "type": "text",
           "description": "URL for the second footer link",
           "label": "Footer link 2 URL",
+          "value": "https://www.zekerarbo.nl"
+        },
+        {
+          "identifier": "footer_title_en",
+          "type": "text",
+          "description": "English title shown in the footer",
+          "label": "Footer title (English)",
+          "value": "ZekerArbo"
+        },
+        {
+          "identifier": "footer_text_en",
+          "type": "text",
+          "description": "English text shown in the footer",
+          "label": "Footer text (English)",
+          "value": "Practical support for employees, employers, insurers and managing general agents."
+        },
+        {
+          "identifier": "footer_link_1_label_en",
+          "type": "text",
+          "description": "English label for the first footer link",
+          "label": "Footer link 1 label (English)",
+          "value": "Contact"
+        },
+        {
+          "identifier": "footer_link_1_url_en",
+          "type": "text",
+          "description": "English URL for the first footer link",
+          "label": "Footer link 1 URL (English)",
+          "value": "/hc/en-nl/requests/new"
+        },
+        {
+          "identifier": "footer_link_2_label_en",
+          "type": "text",
+          "description": "English label for the second footer link",
+          "label": "Footer link 2 label (English)",
+          "value": "ZekerArbo.nl"
+        },
+        {
+          "identifier": "footer_link_2_url_en",
+          "type": "text",
+          "description": "English URL for the second footer link",
+          "label": "Footer link 2 URL (English)",
           "value": "https://www.zekerarbo.nl"
         }
       ]
