@@ -409,62 +409,6 @@
           "value": "/hc/en-nl/requests/new"
         },
         {
-          "identifier": "home_quick_link_appointments_label",
-          "type": "text",
-          "description": "Label for the appointments quick link on the home page",
-          "label": "Appointments quick link label",
-          "value": "Afspraken"
-        },
-        {
-          "identifier": "home_quick_link_appointments_url",
-          "type": "text",
-          "description": "URL for the appointments quick link on the home page",
-          "label": "Appointments quick link URL",
-          "value": "/hc/nl/articles/36585590259986-Afspraken-inzien"
-        },
-        {
-          "identifier": "home_quick_link_video_label",
-          "type": "text",
-          "description": "Label for the video calls quick link on the home page",
-          "label": "Video calls quick link label",
-          "value": "Videobellen"
-        },
-        {
-          "identifier": "home_quick_link_video_url",
-          "type": "text",
-          "description": "URL for the video calls quick link on the home page",
-          "label": "Video calls quick link URL",
-          "value": "/hc/nl/sections/36585590343570-Videobellen"
-        },
-        {
-          "identifier": "home_quick_link_appointments_label_en",
-          "type": "text",
-          "description": "English label for the appointments quick link on the home page",
-          "label": "Appointments quick link label (English)",
-          "value": "Appointments"
-        },
-        {
-          "identifier": "home_quick_link_appointments_url_en",
-          "type": "text",
-          "description": "English URL for the appointments quick link on the home page",
-          "label": "Appointments quick link URL (English)",
-          "value": "/hc/en-nl/articles/36585590259986-View-appointments"
-        },
-        {
-          "identifier": "home_quick_link_video_label_en",
-          "type": "text",
-          "description": "English label for the video calls quick link on the home page",
-          "label": "Video calls quick link label (English)",
-          "value": "Video calls"
-        },
-        {
-          "identifier": "home_quick_link_video_url_en",
-          "type": "text",
-          "description": "English URL for the video calls quick link on the home page",
-          "label": "Video calls quick link URL (English)",
-          "value": "/hc/en-nl/sections/36585600503314-How-to-use-employee-portal"
-        },
-        {
           "identifier": "show_recent_activity",
           "type": "checkbox",
           "description": "recent_activity_description",
