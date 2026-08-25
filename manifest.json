@@ -1,7 +1,7 @@
 {
   "name": "ZekerArbo",
   "author": "Zendesk",
-  "version": "4.42.7",
+  "version": "4.42.8",
   "api_version": 4,
   "default_locale": "en-us",
   "settings": [
