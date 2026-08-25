@@ -57,6 +57,24 @@
       });
     });
 
+    // GitBook-style documentation sidebars use their own toggle markup.
+    const documentationSidebars = document.querySelectorAll(".gb-sidebar");
+    documentationSidebars.forEach((element) => {
+      const toggle = element.querySelector(".gb-sidebar-toggle");
+      if (!toggle) return;
+
+      toggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        toggleNavigation(toggle, element);
+      });
+
+      element.addEventListener("keyup", (event) => {
+        if (event.keyCode === ESCAPE) {
+          closeNavigation(toggle, element);
+        }
+      });
+    });
+
     // If multibrand search has more than 5 help centers or categories collapse the list
     const multibrandFilterLists = document.querySelectorAll(
       ".multibrand-filter-list"
