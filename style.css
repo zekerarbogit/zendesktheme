@@ -5808,6 +5808,12 @@ h6 {
   width: 100%;
 }
 
+.article-container .article-sidebar {
+  flex: none;
+  max-width: none;
+  width: 100%;
+}
+
 .gb-main .category-content,
 .gb-main .section-content {
   max-width: var(--gb-content-width);
