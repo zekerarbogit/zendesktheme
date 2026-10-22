@@ -19,7 +19,7 @@ describe("ServiceCatalogListItem", () => {
     form_id: 456,
     thumbnail_url: "",
     categories: [],
-    allow_request_on_behalf: false,
+    is_request_on_behalf: false,
     published_at: "2025-01-01T00:00:00Z",
     custom_object_fields: {
       "standard::asset_option": "",
@@ -79,6 +79,30 @@ describe("ServiceCatalogListItem", () => {
           variable: "foreground.default",
         })}`
       );
+    });
+
+    it("should render name and description as text without executing HTML payloads", () => {
+      const onError = jest.fn();
+      (window as unknown as { __xss?: () => void }).__xss = onError;
+
+      render(
+        <ServiceCatalogListItem
+          serviceItem={{
+            ...mockServiceItem,
+            name: '<img src=x onerror="window.__xss()">Order a laptop',
+            description:
+              '<img src=x onerror="window.__xss()">Malicious description',
+          }}
+          helpCenterPath={mockHelpCenterPath}
+        />
+      );
+
+      expect(onError).not.toHaveBeenCalled();
+      expect(screen.getByText("Order a laptop")).toBeInTheDocument();
+      expect(screen.getByText("Malicious description")).toBeInTheDocument();
+      expect(document.querySelector("img[onerror]")).toBeNull();
+
+      delete (window as unknown as { __xss?: () => void }).__xss;
     });
 
     it("should use primaryHue as card border color on hover", async () => {

@@ -1,8 +1,8 @@
-<h1 class="visibility-hidden">{{ help_center.name }}</h1>
-
 <section id="main-content" class="section hero gb-hero">
-  <div class="hero-inner">
-    <h2 class="gb-hero-title">
+  <div class="hero-inner za-hero-layout">
+    <div class="za-hero-copy">
+    <p class="za-eyebrow">{{#is help_center.locale 'en-nl'}}ZekerArbo · Help centre{{else}}ZekerArbo · Service &amp; hulp{{/is}}</p>
+    <h1 class="gb-hero-title">
       {{#is help_center.locale 'en-nl'}}
         {{#if settings.home_hero_title_en}}
           {{settings.home_hero_title_en}}
@@ -16,7 +16,7 @@
           {{help_center.name}}
         {{/if}}
       {{/is}}
-    </h2>
+    </h1>
     {{#is help_center.locale 'en-nl'}}
       {{#if settings.home_hero_subtitle_en}}
         <p class="gb-hero-subtitle">{{settings.home_hero_subtitle_en}}</p>
@@ -26,19 +26,42 @@
         <p class="gb-hero-subtitle">{{settings.home_hero_subtitle}}</p>
       {{/if}}
     {{/is}}
+    <div class="za-home-search">
+      <form role="search" data-native-search action="/hc/{{help_center.locale}}/search" method="get">
+        <label for="za-home-query">{{#is help_center.locale 'en-nl'}}Search our help centre{{else}}Zoek in de kennisbank{{/is}}</label>
+        <div class="za-search-field">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.6"/></svg>
+          <input id="za-home-query" type="search" name="query" required placeholder="{{#is help_center.locale 'en-nl'}}For example: logging in or appointments{{else}}Bijvoorbeeld: inloggen of afspraken{{/is}}">
+          <button type="submit">{{t 'search'}}</button>
+        </div>
+      </form>
+      <nav class="za-search-topics" aria-label="{{#is help_center.locale 'en-nl'}}Quick search{{else}}Snel zoeken{{/is}}">
+        <span>{{#is help_center.locale 'en-nl'}}Quick search:{{else}}Snel zoeken:{{/is}}</span>
+        <a href="/hc/{{help_center.locale}}/search?query={{#is help_center.locale 'en-nl'}}login{{else}}inloggen{{/is}}">{{#is help_center.locale 'en-nl'}}Logging in{{else}}Inloggen{{/is}}</a>
+        <a href="/hc/{{help_center.locale}}/search?query={{#is help_center.locale 'en-nl'}}password{{else}}wachtwoord{{/is}}">{{#is help_center.locale 'en-nl'}}Password{{else}}Wachtwoord{{/is}}</a>
+        <a href="/hc/{{help_center.locale}}/search?query={{#is help_center.locale 'en-nl'}}appointment{{else}}afspraak{{/is}}">{{#is help_center.locale 'en-nl'}}Appointments{{else}}Afspraken{{/is}}</a>
+      </nav>
+    </div>
+    </div>
+    <div class="za-hero-visual">
+      <img src="{{#if settings.home_story_image}}{{settings.home_story_image}}{{else}}https://img.diffu.se/zekerarbo.nl/uploads/2024/09/zekerarbo-diensten.jpg{{/if}}" alt="" fetchpriority="high" width="640" height="540">
+      <p class="za-hero-note">{{#is help_center.locale 'en-nl'}}A little help.<br>Ready to go. <em>Zeker.</em>{{else}}Even op weg helpen.<br>Zo geregeld. <em>Zeker.</em>{{/is}}</p>
+    </div>
   </div>
 </section>
 
-<div class="container">
+<main class="container">
   <section class="section knowledge-base gb-home">
     <header class="gb-section-header">
-      <h2>{{ t 'categories' }}</h2>
+      <p class="za-eyebrow">{{#is help_center.locale 'en-nl'}}Your starting point{{else}}Jouw startpunt{{/is}}</p>
+      <h2>{{#is help_center.locale 'en-nl'}}The right help for you{{else}}Vind de hulp die bij je past{{/is}}</h2>
+      <p>{{#is help_center.locale 'en-nl'}}Choose your situation and go straight to the right explanation.{{else}}Kies voor wie je hulp zoekt. Dan wijzen we je de weg.{{/is}}</p>
     </header>
     <section class="categories blocks">
       <ul class="blocks-list gb-category-grid">
         {{#each categories}}
           {{#if ../has_multiple_categories}}
-            <li class="blocks-item gb-category-card">
+            <li class="blocks-item gb-category-card" id="za-category-{{id}}">
               <a href='{{url}}' class="blocks-item-link gb-category-card-link">
                 <span class="gb-category-copy">
                   <span class="blocks-item-title">{{name}}</span>
@@ -60,7 +83,7 @@
             </li>
           {{else}}
             {{#each sections}}
-              <li class="blocks-item gb-category-card">
+              <li class="blocks-item gb-category-card" id="za-category-{{id}}">
                 <a href='{{url}}' class="blocks-item-link gb-category-card-link">
                   <span class="gb-category-copy">
                     <span class="blocks-item-title">
@@ -82,33 +105,30 @@
       {{pagination}}
     </section>
 
-    <section class="gb-home-story" aria-labelledby="home-story-title">
-      <div class="gb-home-story-media">
-        <img
-          src="{{#if settings.home_story_image}}{{settings.home_story_image}}{{else}}https://img.diffu.se/zekerarbo.nl/uploads/2024/09/zekerarbo-diensten.jpg{{/if}}"
-          alt=""
-          loading="lazy"
-        />
-        <img
-          src="{{#if settings.home_story_image_secondary}}{{settings.home_story_image_secondary}}{{else}}https://img.diffu.se/zekerarbo.nl/uploads/2024/12/ArboBas.jpg{{/if}}"
-          alt=""
-          loading="lazy"
-        />
-      </div>
-      <div class="gb-home-story-copy">
-        {{#is help_center.locale 'en-nl'}}
-          <p class="gb-home-story-kicker">Healthy and fit at work</p>
-          <h2 id="home-story-title">Together, we make work stronger</h2>
-          <p>From prevention to absence support, ZekerArbo helps people and organisations keep moving forward with practical expertise and personal attention.</p>
-          <a href="https://www.zekerarbo.nl/over-ons/" class="gb-home-story-link">Discover ZekerArbo</a>
-        {{else}}
-          <p class="gb-home-story-kicker">Gezond en inzetbaar aan het werk</p>
-          <h2 id="home-story-title">Samen maken we werk sterker</h2>
-          <p>Van preventie tot verzuimbegeleiding: ZekerArbo helpt mensen en organisaties vooruit met praktische expertise en persoonlijke aandacht.</p>
-          <a href="https://www.zekerarbo.nl/over-ons/" class="gb-home-story-link">Ontdek ZekerArbo</a>
-        {{/is}}
-      </div>
-    </section>
+    {{#if promoted_articles}}
+      <section class="articles gb-home-content-section gb-home-promoted">
+        <h2>
+          {{#is help_center.locale 'en-nl'}}Popular articles{{else}}Veel gezocht{{/is}}
+        </h2>
+        <ul class="article-list promoted-articles gb-home-article-grid">
+          {{#each promoted_articles}}
+            <li class="promoted-articles-item">
+                <a href="{{url}}">
+                  {{title}}
+
+                  {{#if internal}}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
+                      <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
+                      <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
+                    </svg>
+                  {{/if}}
+                </a>
+            </li>
+          {{/each}}
+        </ul>
+      </section>
+    {{/if}}
+
 
     {{#is help_center.locale 'en-nl'}}
       {{#if settings.home_content_title_en}}
@@ -162,29 +182,35 @@
       {{/if}}
     {{/is}}
 
-    {{#if promoted_articles}}
-      <section class="articles gb-home-content-section gb-home-promoted">
-        <h2>
-          {{#is help_center.locale 'en-nl'}}Popular articles{{else}}Veel gezocht{{/is}}
-        </h2>
-        <ul class="article-list promoted-articles gb-home-article-grid">
-          {{#each promoted_articles}}
-            <li class="promoted-articles-item">
-                <a href="{{url}}">
-                  {{title}}
 
-                  {{#if internal}}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
-                      <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
-                      <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
-                    </svg>
-                  {{/if}}
-                </a>
-            </li>
-          {{/each}}
-        </ul>
-      </section>
-    {{/if}}
+    <section class="gb-home-story" aria-labelledby="home-story-title">
+      <div class="gb-home-story-media">
+        <img
+          src="{{#if settings.home_story_image}}{{settings.home_story_image}}{{else}}https://img.diffu.se/zekerarbo.nl/uploads/2024/09/zekerarbo-diensten.jpg{{/if}}"
+          alt=""
+          loading="lazy"
+        />
+        <img
+          src="{{#if settings.home_story_image_secondary}}{{settings.home_story_image_secondary}}{{else}}https://img.diffu.se/zekerarbo.nl/uploads/2024/12/ArboBas.jpg{{/if}}"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+      <div class="gb-home-story-copy">
+        {{#is help_center.locale 'en-nl'}}
+          <p class="gb-home-story-kicker">Healthy and fit at work</p>
+          <h2 id="home-story-title">Together, we make work stronger</h2>
+          <p>From prevention to absence support, ZekerArbo helps people and organisations keep moving forward with practical expertise and personal attention.</p>
+          <a href="https://www.zekerarbo.nl/over-ons/" class="gb-home-story-link">Discover ZekerArbo</a>
+        {{else}}
+          <p class="gb-home-story-kicker">Gezond en inzetbaar aan het werk</p>
+          <h2 id="home-story-title">Samen maken we werk sterker</h2>
+          <p>Van preventie tot verzuimbegeleiding: ZekerArbo helpt mensen en organisaties vooruit met praktische expertise en persoonlijke aandacht.</p>
+          <a href="https://www.zekerarbo.nl/over-ons/" class="gb-home-story-link">Ontdek ZekerArbo</a>
+        {{/is}}
+      </div>
+    </section>
+
   </section>
 
   {{#if help_center.community_enabled}}
@@ -208,4 +234,4 @@
       </div>
     {{/if}}
   </section>
-</div>
+</main>

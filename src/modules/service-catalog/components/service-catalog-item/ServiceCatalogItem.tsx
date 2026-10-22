@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useItemFormFields } from "../../hooks/useItemFormFields";
 import { ItemRequestForm } from "./ItemRequestForm";
+import type { UserOption } from "../../../ticket-fields/data-types/UserOption";
 import { CategorySelector } from "./CategorySelector";
 import { PreviewModeBanner } from "./PreviewModeBanner";
 import type { Organization } from "../../../ticket-fields/data-types/Organization";
@@ -10,8 +11,8 @@ import { useServiceCatalogItem } from "../../hooks/useServiceCatalogItem";
 import { submitServiceItemRequest } from "./submitServiceItemRequest";
 import type { ServiceRequestResponse } from "../../data-types/ServiceRequestResponse";
 import { addFlashNotification, notify } from "../../../shared";
-import { useTranslation } from "react-i18next";
 import { Anchor } from "@zendeskgarden/react-buttons";
+import { useTranslation } from "react-i18next";
 import type { TicketFieldObject } from "../../../ticket-fields/data-types/TicketFieldObject";
 import {
   AttachmentsInputName,
@@ -92,6 +93,8 @@ export function ServiceCatalogItem({
     null
   );
 
+  const [selectedUser, setSelectedUser] = useState<UserOption | null>(null);
+
   useEffect(() => {
     if (!serviceCatalogItem?.categories?.length) return;
 
@@ -119,7 +122,7 @@ export function ServiceCatalogItem({
   const attachmentsOptionId =
     serviceCatalogItem?.custom_object_fields?.["standard::attachment_option"];
 
-  const requestOnBehalfEnabled = serviceCatalogItem?.allow_request_on_behalf;
+  const requestOnBehalfEnabled = serviceCatalogItem?.is_request_on_behalf;
 
   const {
     attachmentsOption,
@@ -255,6 +258,13 @@ export function ServiceCatalogItem({
     setAssetTypeError(errors.assetType);
     setAssetError(errors.asset);
 
+    setRequestFields((currentFields) =>
+      currentFields.map((field) => ({
+        ...field,
+        error: errors.fields[field.id] ?? null,
+      }))
+    );
+
     return hasError;
   }
 
@@ -277,12 +287,14 @@ export function ServiceCatalogItem({
   async function handleValidationErrors(response: Response) {
     const errorData: ServiceRequestResponse = await response.json();
     const invalidFieldErrors = errorData?.details?.base ?? [];
-    const missingErrorFields = invalidFieldErrors.filter(
+
+    const staleFieldErrors = invalidFieldErrors.filter(
       (errorField) =>
-        !requestFields.some((field) => field.id === errorField.field_key)
+        errorField.field_id != null &&
+        !requestFields.some((field) => field.id === errorField.field_id)
     );
 
-    if (missingErrorFields.length > 0) {
+    if (staleFieldErrors.length > 0) {
       notifySubmitError(
         <>
           {t(
@@ -300,16 +312,26 @@ export function ServiceCatalogItem({
         </>
       );
     } else if (invalidFieldErrors.length > 0) {
-      notifySubmitError();
+      notifySubmitError(
+        t(
+          "service-catalog.item.service-request-form-errors-message",
+          "Check the form for errors and try again."
+        )
+      );
     }
 
-    const updatedFields = requestFields.map((field) => {
-      const errorField = invalidFieldErrors.find(
-        (errorField) => errorField.field_key === field.id
-      );
-      return { ...field, error: errorField?.description || null };
-    });
-    setRequestFields(updatedFields);
+    // setRequestFields is backed by the full (not just visible) field list,
+    // so we must merge via a functional update rather than replacing it with
+    // a mapped copy of `requestFields` (the visible subset) — otherwise any
+    // field currently hidden by an end-user condition would be dropped.
+    setRequestFields((prevFields) =>
+      prevFields.map((field) => {
+        const errorField = invalidFieldErrors.find(
+          (errorField) => errorField.field_id === field.id
+        );
+        return { ...field, error: errorField?.description || null };
+      })
+    );
   }
 
   async function handleSubmitError(response: Response | undefined) {
@@ -364,15 +386,36 @@ export function ServiceCatalogItem({
     setIsSubmitting(true);
 
     try {
+      const isRequestingOnBehalf =
+        selectedUser != null && Number(selectedUser.id) !== userId;
+      const requesterId = isRequestingOnBehalf ? Number(selectedUser.id) : null;
+
+      const onBehalfNote =
+        isRequestingOnBehalf && selectedUser
+          ? {
+              submitterLabel: t(
+                "service-catalog.item.submitter-label",
+                "Submitter: {{name}}",
+                { name: userName }
+              ),
+              requesterLabel: t(
+                "service-catalog.item.requester-label",
+                "Requester: {{name}}",
+                { name: selectedUser.name }
+              ),
+            }
+          : null;
+
       const response = await submitServiceItemRequest(
         serviceCatalogItem,
         requestFieldsWithFormData,
         associatedLookupField,
-        baseLocale,
         attachments,
         helpCenterPath,
         categoryLookupField,
-        selectedCategoryId
+        selectedCategoryId,
+        requesterId,
+        onBehalfNote
       );
 
       if (response?.ok) {
@@ -434,6 +477,8 @@ export function ServiceCatalogItem({
           userId={userId}
           requestOnBehalfEnabled={requestOnBehalfEnabled}
           userName={userName}
+          selectedUser={selectedUser}
+          setSelectedUser={setSelectedUser}
           brandId={brandId}
           defaultOrganizationId={defaultOrganizationId}
           handleChange={handleFieldChange}

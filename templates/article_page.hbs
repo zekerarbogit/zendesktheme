@@ -2,24 +2,18 @@
 <div class="container">
   <div class="sub-nav">
     {{breadcrumbs}}
-    <div class="search-container">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
-      </svg>
-      {{search scoped=settings.scoped_kb_search submit=false}}
-    </div>
   </div>
 
   <div class="article-container" id="article-container">
     <aside class="article-sidebar gb-sidebar" aria-label="{{#is help_center.locale 'en-nl'}}Navigation menu{{else}}Navigatiemenu{{/is}}">
       <button type="button" class="gb-sidebar-toggle" aria-expanded="false" aria-controls="gb-sidebar-article">
-        <span>Menu</span>
+        <span>{{#is help_center.locale 'en-nl'}}Browse topics{{else}}Bekijk onderwerpen{{/is}}</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" aria-hidden="true">
           <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M4 6l4 4 4-4"/>
         </svg>
       </button>
       <div class="gb-sidebar-panel" id="gb-sidebar-article">
+        <a class="za-back-link" href="{{page_path 'help_center'}}"><span aria-hidden="true">←</span> {{#is help_center.locale 'en-nl'}}All topics{{else}}Alle onderwerpen{{/is}}</a>
         <nav class="gb-nav" data-gb-nav data-current-section-id="{{section.id}}" data-current-article-id="{{article.id}}" data-locale="{{help_center.locale}}">
           <a href="{{section.url}}" class="gb-nav-title gb-nav-link">{{section.name}}</a>
           <ul class="gb-nav-list gb-nav-list--nested">
@@ -82,6 +76,9 @@
         {{/if}}
       </header>
 
+      <nav class="za-article-toc" data-za-toc hidden aria-label="{{#is help_center.locale 'en-nl'}}On this page{{else}}In dit artikel{{/is}}">
+        <h2>{{#is help_center.locale 'en-nl'}}On this page{{else}}In dit artikel{{/is}}</h2><ol></ol>
+      </nav>
       <section class="article-info">
         <div class="article-content">
           <div class="article-body">{{article.body}}</div>

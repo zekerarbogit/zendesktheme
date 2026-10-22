@@ -1,7 +1,7 @@
 {
   "name": "ZekerArbo",
   "author": "Zendesk",
-  "version": "4.42.9",
+  "version": "5.0.0",
   "api_version": 4,
   "default_locale": "en-us",
   "settings": [
@@ -13,7 +13,7 @@
           "type": "color",
           "description": "brand_color_description",
           "label": "brand_color_label",
-          "value": "#17494D"
+          "value": "#27483D"
         },
         {
           "identifier": "brand_text_color",
@@ -27,28 +27,28 @@
           "type": "color",
           "description": "text_color_description",
           "label": "text_color_label",
-          "value": "#2F3941"
+          "value": "#27483D"
         },
         {
           "identifier": "link_color",
           "type": "color",
           "description": "link_color_description",
           "label": "link_color_label",
-          "value": "#1F73B7"
+          "value": "#27483D"
         },
         {
           "identifier": "hover_link_color",
           "type": "color",
           "description": "hover_link_color_description",
           "label": "hover_link_color_label",
-          "value": "#0F3554"
+          "value": "#34311F"
         },
         {
           "identifier": "visited_link_color",
           "type": "color",
           "description": "visited_link_color_description",
           "label": "visited_link_color_label",
-          "value": "#9358B0"
+          "value": "#27483D"
         },
         {
           "identifier": "background_color",
@@ -329,14 +329,14 @@
           "type": "text",
           "description": "Title shown at the top of the home page",
           "label": "Home page title",
-          "value": "ZekerArbo"
+          "value": "Waar kunnen we je mee helpen?"
         },
         {
           "identifier": "home_hero_subtitle",
           "type": "text",
           "description": "Short text shown below the home page title",
           "label": "Home page subtitle",
-          "value": "Waar kunnen we je mee helpen?"
+          "value": "Inloggen, het portaal gebruiken of een vraag over verzuim? We helpen je stap voor stap verder."
         },
         {
           "identifier": "home_content_title",
@@ -357,28 +357,28 @@
           "type": "text",
           "description": "Optional link label for the home page content block",
           "label": "Home content link label",
-          "value": "Een aanvraag indienen"
+          "value": "Neem contact op"
         },
         {
           "identifier": "home_content_link_url",
           "type": "text",
           "description": "Optional link URL for the home page content block",
           "label": "Home content link URL",
-          "value": "/hc/nl/requests/new"
+          "value": "https://www.zekerarbo.nl/contact/"
         },
         {
           "identifier": "home_hero_title_en",
           "type": "text",
           "description": "English title shown at the top of the home page",
           "label": "Home page title (English)",
-          "value": "Welcome to ZekerArbo Service"
+          "value": "How can we help you?"
         },
         {
           "identifier": "home_hero_subtitle_en",
           "type": "text",
           "description": "English text shown below the home page title",
           "label": "Home page subtitle (English)",
-          "value": "Here you can find guidance on using the ZekerArbo portal. Whether you are an employer managing absence or an employee working on recovery, we explain how it works step by step."
+          "value": "Logging in, using the portal or a question about absence? We will guide you step by step."
         },
         {
           "identifier": "home_content_title_en",
@@ -399,14 +399,14 @@
           "type": "text",
           "description": "English link label for the home page content block",
           "label": "Home content link label (English)",
-          "value": "Submit a request"
+          "value": "Contact us"
         },
         {
           "identifier": "home_content_link_url_en",
           "type": "text",
           "description": "English link URL for the home page content block",
           "label": "Home content link URL (English)",
-          "value": "/hc/en-nl/requests/new"
+          "value": "https://www.zekerarbo.nl/contact/"
         },
         {
           "identifier": "show_recent_activity",
@@ -446,7 +446,7 @@
           "type": "text",
           "description": "URL for the first footer link",
           "label": "Footer link 1 URL",
-          "value": "/hc/nl/requests/new"
+          "value": "https://www.zekerarbo.nl/contact/"
         },
         {
           "identifier": "footer_link_2_label",
@@ -488,7 +488,7 @@
           "type": "text",
           "description": "English URL for the first footer link",
           "label": "Footer link 1 URL (English)",
-          "value": "/hc/en-nl/requests/new"
+          "value": "https://www.zekerarbo.nl/contact/"
         },
         {
           "identifier": "footer_link_2_label_en",
@@ -612,6 +612,37 @@
           "description": "show_suggested_articles_in_new_request_form_description",
           "label": "show_suggested_articles_label",
           "value": true
+        }
+      ]
+    },
+    {
+      "label": "request_page_group_label",
+      "variables": [
+        {
+          "identifier": "filter_ticket_fields_by_brand",
+          "type": "checkbox",
+          "description": "filter_ticket_fields_by_brand_description",
+          "label": "filter_ticket_fields_by_brand_label",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "ZekerArbo typography",
+      "variables": [
+        {
+          "identifier": "matter_font_url",
+          "type": "text",
+          "label": "Matter regular webfont URL",
+          "description": "Optional licensed WOFF2 file URL. Leave empty to use Plus Jakarta Sans.",
+          "value": ""
+        },
+        {
+          "identifier": "doyle_font_url",
+          "type": "text",
+          "label": "Doyle italic webfont URL",
+          "description": "Optional licensed WOFF2 file URL for the campaign accent.",
+          "value": ""
         }
       ]
     }

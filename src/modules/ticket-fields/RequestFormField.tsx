@@ -6,6 +6,8 @@ import { DropDown } from "./fields/DropDown";
 import { Input } from "./fields/Input";
 import type { LookupFieldProps } from "./fields/LookupField";
 import { LookupField } from "./fields/LookupField";
+import { MultiLookupField } from "./fields/MultiLookupField";
+import { isUserLookupField, UserLookupField } from "./fields/UserLookupField";
 import { MultiSelect } from "./fields/MultiSelect";
 import { Tagger } from "./fields/Tagger";
 import { TextArea } from "./fields/textarea/TextArea";
@@ -15,7 +17,7 @@ interface RequestFormFieldProps {
   baseLocale: string;
   hasAtMentions: boolean;
   userRole: string;
-  userId: number;
+  userId: number | null;
   defaultOrganizationId: string | null;
   organizationField?: TicketFieldObject | null;
   brandId: number;
@@ -133,8 +135,35 @@ export const RequestFormField = ({
       );
 
     case "lookup":
+      if (isUserLookupField(field)) {
+        return (
+          <UserLookupField
+            key={field.name}
+            field={field}
+            onChange={(value) => handleChange(field, value)}
+          />
+        );
+      }
       return (
         <LookupField
+          key={field.name}
+          field={field}
+          userId={userId}
+          organizationId={
+            organizationField != null
+              ? (organizationField.value as string)
+              : defaultOrganizationId
+          }
+          brandId={brandId}
+          visibleFields={visibleFields}
+          onChange={(value) => handleChange(field, value)}
+          buildLookupFieldOptions={buildLookupFieldOptions}
+          renderOption={renderLookupFieldOption}
+        />
+      );
+    case "multi_lookup":
+      return (
+        <MultiLookupField
           key={field.name}
           field={field}
           userId={userId}

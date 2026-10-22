@@ -1,12 +1,13 @@
 # Lokale ZekerArbo-preview
 
-Bouw eerst de gegenereerde theme-assets en start daarna de eenvoudige lokale preview:
-
 ```bash
+yarn install --immutable
 yarn build
 yarn preview
 ```
 
-Open vervolgens [http://localhost:4173/preview/](http://localhost:4173/preview/). De pagina gebruikt dezelfde `gb-*`-klassen als de Zendesk-homepage, met vaste voorbeelddata voor de categoriekaarten, artikelen, beeldband en Legal-footer.
+Open http://localhost:4173/preview/ voor Nederlands en http://localhost:4173/hc/en-nl/ voor Engels. De preview rendert de echte thematemplates met voorbeelddata. Klik op een doelgroep, onderwerp of uitgelicht artikel. Zoeken werkt op de drie voorbeeldartikelen.
 
-Gebruik `?locale=en-nl` voor de Engelse variant. De headeracties zijn standaard verborgen, net als de huidige themeconfiguratie; voeg `&headerActions=true` toe om de optionele knoppen te controleren. De echte Zendesk-preview blijft nodig om Curlybars-data en navigatiegedrag te controleren.
+De volledige Zendesk-preview (`yarn zcli login -i`, daarna `yarn start`) blijft nodig voor Curlybars-validatie, live zoekresultaten, rechten en formulieren. Zie [de oplevernotities](../docs/enterprise-refresh.md).
+
+De server bindt alleen aan 127.0.0.1 en serveert uitsluitend publieke thema-assets. De oude index.html en preview.js worden niet meer gebruikt door de server.

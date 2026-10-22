@@ -1102,11 +1102,11 @@ h6 {
     padding: 14px 0;
   }
 
-  .gb-sidebar[aria-expanded="true"] .gb-sidebar-panel {
+  .gb-sidebar.expanded .gb-sidebar-panel {
     display: block;
   }
 
-  .gb-sidebar[aria-expanded="true"] .gb-sidebar-toggle svg {
+  .gb-sidebar.expanded .gb-sidebar-toggle svg {
     transform: rotate(180deg);
   }
 

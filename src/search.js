@@ -12,7 +12,7 @@ function debounce(callback, wait) {
 
 // Define variables for search field
 let searchFormFilledClassName = "search-has-value";
-let searchFormSelector = "form[role='search']";
+let searchFormSelector = "form[role='search']:not([data-native-search])";
 
 // Clear the search input, and then return focus to it
 function clearSearchInput(event) {
